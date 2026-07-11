@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0f172a" />
+    <title>Ember</title>
+    <meta
+      name="description"
+      content="Ember é a interface web do Butterscotch no GitHub Pages."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="ambient ambient-a" aria-hidden="true"></div>
+    <div class="ambient ambient-b" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">E</div>
+        <div>
+          <p class="eyebrow">GitHub Pages</p>
+          <h1>Ember</h1>
+        </div>
+      </div>
+
+      <div class="status-group">
+        <span id="engineStatus" class="status-pill status-idle">Aguardando jogo</span>
+        <button id="themeToggle" class="ghost-button" type="button">Tema</button>
+      </div>
+    </header>
+
+    <main class="shell">
+      <section class="hero card">
+        <div>
+          <p class="eyebrow">Butterscotch Web</p>
+          <h2>Uma frente limpa para jogar direto no navegador.</h2>
+          <p class="lede">
+            Esta versão foi pensada para rodar no GitHub Pages com a base web do
+            Butterscotch, mantendo a interface leve, estável e fácil de ajustar.
+          </p>
+        </div>
+
+        <div class="hero-actions">
+          <button id="launchButton" class="primary-button" type="button">Iniciar motor</button>
+          <label class="secondary-button file-button">
+            <input id="gamePicker" type="file" accept=".zip,.exe,.win,.html,.swf" hidden />
+            Selecionar jogo
+          </label>
+          <button id="clearLogButton" class="ghost-button" type="button">Limpar logs</button>
+        </div>
+
+        <div class="hero-grid">
+          <article class="mini-card">
+            <span class="mini-kicker">Arquivos</span>
+            <strong id="selectedGameName">Nenhum selecionado</strong>
+            <p>Escolha um ZIP ou arquivo compatível para preparar a execução.</p>
+          </article>
+          <article class="mini-card">
+            <span class="mini-kicker">Canvas</span>
+            <strong>Renderização web</strong>
+            <p>O jogo aparece no painel central assim que o runtime sobe.</p>
+          </article>
+          <article class="mini-card">
+            <span class="mini-kicker">Fluxo</span>
+            <strong>GitHub Pages</strong>
+            <p>Sem dependência de Android, Gradle ou build nativo.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="workspace card">
+        <div class="workspace-header">
+          <div>
+            <p class="eyebrow">Sessão</p>
+            <h3>Janela do jogo</h3>
+          </div>
+          <div class="workspace-badges">
+            <span class="badge">HTML5</span>
+            <span class="badge">WebAssembly</span>
+            <span class="badge">Butterscotch</span>
+          </div>
+        </div>
+
+        <div id="dropZone" class="drop-zone">
+          <canvas id="gameCanvas" width="1280" height="720"></canvas>
+          <div id="canvasOverlay" class="canvas-overlay">
+            <strong>Pronto para iniciar</strong>
+            <p>Arraste um arquivo aqui ou clique em “Iniciar motor”.</p>
+          </div>
+        </div>
+      </section>
+
+      <aside class="sidebar">
+        <section class="card panel">
+          <p class="eyebrow">Engines</p>
+          <div class="engine-list">
+            <div class="engine-item active">
+              <span class="dot"></span>
+              <div>
+                <strong>Butterscotch</strong>
+                <p>Ativo nesta build.</p>
+              </div>
+            </div>
+            <div class="engine-item muted">
+              <span class="dot"></span>
+              <div>
+                <strong>EasyRPG</strong>
+                <p>Reservado para uma etapa futura.</p>
+              </div>
+            </div>
+            <div class="engine-item muted">
+              <span class="dot"></span>
+              <div>
+                <strong>Ruffle</strong>
+                <p>Reservado para uma etapa futura.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="card panel">
+          <p class="eyebrow">Logs</p>
+          <div id="logOutput" class="log-output" aria-live="polite"></div>
+        </section>
+      </aside>
+    </main>
+
+    <footer class="footer">
+      <span>Ember para GitHub Pages</span>
+      <span>Preservando arquivos existentes do repositório</span>
+    </footer>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>
